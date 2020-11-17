@@ -33,11 +33,11 @@ progress::-moz-progress-bar {
 
 .box1{
   display: inline-block;
+  text-align:center;
 }
 
 
 .display_box{
-  display: inline-block;
   text-align:center;
   font-size:20px;
   padding: 10px;
@@ -58,33 +58,35 @@ progress::-moz-progress-bar {
 
 
 .spare_button {
+  vertical-align: middle;
   -webkit-appearance: none;
   font-size:20px;
   height:10%;
-  width: 10%;
+  width: 20%;
   padding: 10px;
   background-color: #ffffff;
   display: inline-block;
   padding: 0.3em 1em;
   text-decoration: none;
-  border: solid 2px #fd9535;
+  border: solid 2px #000000;
   border-radius: 3px;
   transition: .4s;
 }
 
 .spare_button:hover {
+  vertical-align: middle;
   -webkit-appearance: none;
-  text-align:center;
-  background: #fd9535;
+  background: #2cb67d;
   color: white;
 }
 
 
 .report_button {
-  -webkit-appearance: none;
+  vertical-align: middle;
+    -webkit-appearance: none;
     font-size:30px;
     height:60px;
-    width: 60px;
+    width: 65px;
     padding: 10px;
     position: relative;
     display: inline-block;
@@ -98,6 +100,7 @@ progress::-moz-progress-bar {
     font-weight: bold;
 }
 .report_button:active {
+  vertical-align: middle;
   -webkit-appearance: none;
   border-bottom: solid 2px #fd9535;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
@@ -116,8 +119,8 @@ progress::-moz-progress-bar {
       padding: 0.25em 0.5em;
       text-decoration: none;
       color: #0d0d0d;
-      background: #d9376e;/*背景色*/
-      border-bottom: solid 2px #d9376e;/*少し濃い目の色に*/
+      background: #2cb67d;/*背景色*/
+      border-bottom: solid 2px #0d8050;/*少し濃い目の色に*/
       border-radius: 4px;/*角の丸み*/
       box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
       font-weight: bold;

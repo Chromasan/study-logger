@@ -12,7 +12,7 @@ function progress_bar(){
     var val=bunshi/bunbo*100
 
     document.getElementById("myProgress").value = val;
-    document.getElementById("myProgress").innerText = val + "%";
+    //document.getElementById("myProgress").innerText = val + "%";
 }
 
 
