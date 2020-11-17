@@ -4,9 +4,10 @@ body{
 }
 
 /*参照先：https://www.366service.com/jp/qa/1a942926882f3d490fcd1416c10862b5*/
+
 progress {
-  width: 300px;
- height: 20px;
+  width: 100%;
+  height: 40px;
  /*ここに適当な色を入れておこないと、バーそのものが消えてしまう！*/
   background: #0d0d0d;
 }
