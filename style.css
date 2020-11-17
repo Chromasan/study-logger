@@ -67,6 +67,7 @@ progress::-moz-progress-bar {
   background-color: #ffffff;
   display: inline-block;
   padding: 0.3em 1em;
+  margin-bottom:0.5ex;
   text-decoration: none;
   border: solid 2px #000000;
   border-radius: 3px;
@@ -74,6 +75,7 @@ progress::-moz-progress-bar {
 }
 
 .spare_button:hover {
+  margin-bottom:0.5ex;
   vertical-align: middle;
   -webkit-appearance: none;
   background: #2cb67d;
