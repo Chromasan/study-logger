@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>進捗管理</title>
+  <script type="text/javascript" src="style.js"></script>
+</head>
+
+<header>
+  <div class="">
+  </div>
+</header>
+
+<body>
+
+  <div>
+            <p class="box1">進捗状況：</p>
+            <progress class="progress-bar" id="myProgress" value="0" max="100">0%</progress>
+  </div>
+
+<div>
+  <p class="box1">科目：</p>
+  <input class="display_box" name="text10" size="10" maxlength="20" id="output1">
+  <p class="box1">今日の目標数：</p>
+  <input class="display_box" name="text100" size="3" maxlength="100" id="target_amount">
+</div>
+
+<div>
+  <p class="box1">現在の問題番号：</p>
+  <input class="display_box" name="text11" size="3" maxlength="100" id="output2">
+  <p class="box1">次の問題番号候補：</p>
+    <input class="spare_button" type="button" value="" onclick="new_number_set1()" id="spare1">
+    <input class="spare_button" type="button" value="" onclick="new_number_set2()" id="spare2">
+    <input class="spare_button" type="button" value="" onclick="new_number_set3()" id="spare3">
+</div>
+
+<div　class="button_wrapper">
+    <input class="report_button" type="button" value="○" onclick="maru()" >
+    <input class="report_button" type="button" value="△"  onclick="sankaku()">
+    <input class="report_button" type="button" value="×"  onclick="batu()">
+    <input class="report_button" type="button" value="?"  onclick="hatena()">
+</div>
+
+<div>
+
+<br><p class="box1">今日の達成問題数：</p>
+<input class="display_box" name="text30" size="3" maxlength="20" id="count">
+<input class="sub_button" type="button" value="今日の達成数をリセット" onclick="today_count_reset()">
+</div>
+
+    <details>
+        <summary>詳細情報の表示/非表示</summary>
+      <p>現在の問題番号：上に移した</p>
+
+      <p>今日解いた問題（？除く）</p>
+      <textarea name="text12" cols="30" rows="1" id="output3"></textarea>
+      <p>今までの○</p>
+      <textarea name="text13" cols="30" rows="1" id="output4"></textarea>
+      <p>今までの△</p>
+      <textarea name="text14" cols="30" rows="1" id="output5"></textarea>
+      <p>今までの×</p>
+      <textarea name="text15" cols="30" rows="1" id="output6"></textarea>
+      <p>今までの？</p>
+      <textarea name="text16" cols="30" rows="1" id="output7"></textarea>
+
+    </details>
+
+    <details>
+            <summary>セーブデータを読み込む</summary>
+              <form name="form1">
+              <textarea name="text1" cols="30" rows="1"></textarea></p>
+              </form>
+        </details>
+
+
+
+
+        <form action="./upload.php" method="post" enctype="multipart/form-data">
+      <div id="drop-zone" style="border: 1px solid; padding: 30px;">
+          <p>ファイルをドラッグ＆ドロップもしくは</p>
+          <input type="file" name="file" id="file-input">
+      </div>
+
+      <details>
+              <summary>終了前に必ず行う事</summary>
+          </details>
+      <input class="sub_button" type="button" value="現在の進捗をセーブする" onclick="save_now()">
+
+
+</body>
+
+
+
+<footer>
+</footer>
+
+<script type="text/javascript">
+    //ドラッグアンドドロップで情報を読み込み、反映させる
+    var dropZone = document.getElementById('drop-zone');
+    var preview = document.getElementById('preview');
+    var fileInput = document.getElementById('file-input');
+
+    dropZone.addEventListener('dragover', function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        this.style.background = '#e1e7f0';
+    }, false);
+
+    dropZone.addEventListener('dragleave', function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        this.style.background = '#ffffff';
+    }, false);
+
+    fileInput.addEventListener('change', function () {
+        previewFile(this.files[0]);
+    });
+
+    dropZone.addEventListener('drop', function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        this.style.background = '#ffffff'; //背景色を白に戻す
+        var files = e.dataTransfer.files; //ドロップしたファイルを取得
+        if (files.length > 1) return alert('アップロードできるファイルは1つだけです。');
+        fileInput.files = files; //inputのvalueをドラッグしたファイルに置き換える。
+        previewFile(files[0]);
+    }, false);
+
+    function previewFile(file) {
+        /* FileReaderで読み込み、プレビュー画像を表示。 */
+        var fr = new FileReader();
+        fr.readAsText(file);
+        fr.onload = function() {
+        document.form1.text1.value = fr.result;
+        //自動で各項目に反映させる
+        splitByLine()
+        };
+    }
+</script>
+
+
+</html>
