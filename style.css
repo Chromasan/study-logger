@@ -96,8 +96,8 @@ progress::-moz-progress-bar {
   vertical-align: middle;
   -webkit-appearance: none;
   font-size:20px;
-  height:10%;
-  width: 20%;
+  height:50px;
+  width: 85px;
   padding: 10px;
   background-color: #ffffff;
   display: inline-block;
