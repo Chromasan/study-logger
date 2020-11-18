@@ -23,12 +23,12 @@
   <p class="box1">科目：</p>
   <input class="display_box" name="text10" size="10" maxlength="20" id="output1"><br>
   <p class="box1">今日の目標数：</p>
-  <input class="display_box" name="text100" size="3" maxlength="100" id="target_amount">
+  <input class="display_box" type="tel" maxlength="4" name="text100" size="4"  id="target_amount">
 </div>
 
 <div>
   <p class="box1">現在の問題番号：</p>
-  <input class="display_box" name="text11" size="3" maxlength="100" id="output2"><br>
+  <input class="display_box_v1" type="tel" maxlength="4" name="text11" size="4" id="output2"><br>
   <p class="box1">次の問題番号候補：</p><br>
 
     <input class="spare_button" type="button" value="" onclick="new_number_set1()" id="spare1">
@@ -47,7 +47,7 @@
 <div>
 
 <br><p class="box1">今日の達成問題数：</p>
-<input class="display_box" name="text30" size="3" maxlength="20" id="count">
+<input type="text" class="display_box_v2" name="text30" size="3" maxlength="4" id="count"><br>
 <input class="sub_button" type="button" value="今日の達成数をリセット" onclick="today_count_reset()">
 </div>
 
