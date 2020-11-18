@@ -1,3 +1,4 @@
+
 //ドラッグアンドドロップを実装する関数
 //htmlの方に記述する事にした
 //参照先：http://bashalog.c-brains.jp/20/03/30-170110.php
@@ -122,7 +123,8 @@ function splitByLine() {
 
     count()
     progress_bar()
-    return outArray;
+    //なぜか、ここのspare_changeが反映されない！
+    spare_change()
 }
 
 //候補の番号をクリック→現在の問題番号を更新する関数

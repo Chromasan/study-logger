@@ -6,13 +6,16 @@
   <title>進捗管理</title>
   <script type="text/javascript" src="style.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-
 </head>
 
 <header>
-  <div class="">
-  </div>
+  <!--ここは絶対に消さない！これがセーブ、ロードに必須！name1もtext1も変えない！-->
+  <form hidden name="form1">
+  <textarea name="text1" cols="30" rows="1"></textarea></p>
+  </form>
 </header>
+
+
 
 <body>
   <div>
@@ -20,20 +23,14 @@
   </div>
 
 <div>
-  <p class="box1">科目：</p>
-  <input class="display_box" name="text10" size="10" maxlength="20" id="output1"><br>
-  <p class="box1">今日の目標数：</p>
-  <input class="display_box" type="tel" maxlength="4" name="text100" size="4"  id="target_amount">
+  <input class="display_box" name="text10" size="12" maxlength="20" value="科目名は？" id="output1">
 </div>
 
 <div>
-  <p class="box1">現在の問題番号：</p>
-  <input class="display_box_v1" type="tel" maxlength="4" name="text11" size="4" id="output2"><br>
-  <p class="box1">次の問題番号候補：</p><br>
-
-    <input class="spare_button" type="button" value="" onclick="new_number_set1()" id="spare1">
-    <input class="spare_button" type="button" value="" onclick="new_number_set2()" id="spare2">
-    <input class="spare_button" type="button" value="" onclick="new_number_set3()" id="spare3">
+  <input class="display_box_v1" type="tel" maxlength="4" name="text11" size="10" id="output2" value=""><br>
+    <input class="spare_button" type="button" value="次候補" onclick="new_number_set1()" id="spare1">
+    <input class="spare_button" type="button" value="次候補" onclick="new_number_set2()" id="spare2">
+    <input class="spare_button" type="button" value="次候補" onclick="new_number_set3()" id="spare3">
 
 </div>
 
@@ -45,44 +42,37 @@
 </div>
 
 <div>
-
-<br><p class="box1">今日の達成問題数：</p>
-<input type="text" class="display_box_v2" name="text30" size="3" maxlength="4" id="count"><br>
-<input class="sub_button" type="button" value="今日の達成数をリセット" onclick="today_count_reset()">
+  <input class="display_box" type="tel" maxlength="4" name="text100" size="12" value="今日の目標数は？"  id="target_amount">
 </div>
 
-    <details>
-        <summary>記録情報の詳細表示/非表示</summary>
-      <p>今日解いた問題（？除く）</p>
-      <textarea name="text12" cols="30" rows="1" id="output3"></textarea>
-      <p>今までの○</p>
-      <textarea name="text13" cols="30" rows="1" id="output4"></textarea>
-      <p>今までの△</p>
-      <textarea name="text14" cols="30" rows="1" id="output5"></textarea>
-      <p>今までの×</p>
-      <textarea name="text15" cols="30" rows="1" id="output6"></textarea>
-      <p>今までの？</p>
-      <textarea name="text16" cols="30" rows="1" id="output7"></textarea>
-
-    </details>
-
-    <details>
-            <summary>セーブデータを読み込む</summary>
-              <form name="form1">
-              <textarea name="text1" cols="30" rows="1"></textarea></p>
-              </form>
-        </details>
 
 
-
-
+<div>
+<input type="text" class="display_box_v2" name="text30" size="12" maxlength="4" value="今日の達成数" id="count"><br>
+<input class="sub_button" type="button" value="今日の達成数をリセット" onclick="today_count_reset()">
+</div>
         <form action="./upload.php" method="post" enctype="multipart/form-data">
-      <div id="drop-zone" style="border: 1px solid; padding: 10px; background:">
-          <p>ファイルをドラッグ＆ドロップもしくは</p>
-          <input type="file" name="file" id="file-input">
-      </div>
+              <div class="drop-zone" id="drop-zone">
+                  <p>セーブデータをドラッグ＆ドロップ OR</p>
+                  <input type="file" name="file" id="file-input">
+              </div>
 
       <input class="sub_button" type="button" value="現在の進捗をセーブする" onclick="save_now()">
+
+      <details>
+          <summary>記録情報の詳細表示/非表示</summary>
+        <p>今日解いた問題（？除く）</p>
+        <textarea name="text12" cols="30" rows="1" id="output3"></textarea>
+        <p>今までの○</p>
+        <textarea name="text13" cols="30" rows="1" id="output4"></textarea>
+        <p>今までの△</p>
+        <textarea name="text14" cols="30" rows="1" id="output5"></textarea>
+        <p>今までの×</p>
+        <textarea name="text15" cols="30" rows="1" id="output6"></textarea>
+        <p>今までの？</p>
+        <textarea name="text16" cols="30" rows="1" id="output7"></textarea>
+
+      </details>
 
 
 </body>
@@ -91,6 +81,7 @@
 </footer>
 
 <script type="text/javascript">
+
     //ドラッグアンドドロップで情報を読み込み、反映させる
     var dropZone = document.getElementById('drop-zone');
     var preview = document.getElementById('preview');
@@ -133,6 +124,5 @@
         };
     }
 </script>
-
 
 </html>

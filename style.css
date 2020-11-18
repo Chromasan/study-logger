@@ -1,25 +1,34 @@
+
 body{
-  background-color:#eff0f3;
+  background-color:#ecf0f1;
   -webkit-text-size-adjust: 100%;
 }
 
-/*参照先：https://www.366service.com/jp/qa/1a942926882f3d490fcd1416c10862b5*/
 
+/*参照先：https://www.366service.com/jp/qa/1a942926882f3d490fcd1416c10862b5*/
 progress {
-  width: 100%;
+  width: 320px;
   height: 40px;
  /*ここに適当な色を入れておこないと、バーそのものが消えてしまう！*/
   background: #0d0d0d;
+  border-top-right-radius:15px;
+  border-bottom-right-radius:15px;
 }
 
 /*バーの背景色*/
 progress::-webkit-progress-bar {
-  background: #ffffff;
+  background-color: #ECECEC;
+    background-image: -webkit-gradient(linear, 0 0, 100% 100%,color-stop(.25, #bdc3c7), color-stop(.25, transparent),color-stop(.5, transparent), color-stop(.5, #bdc3c7),color-stop(.75, #bdc3c7), color-stop(.75, transparent),to(transparent));
+  -webkit-background-size: 7px 7px;
+  border-top-right-radius:15px;
+  border-bottom-right-radius:15px;
 }
 
 /*バーの進行色*/
 progress::-webkit-progress-value {
-  background: #2cb67d;
+  background: #2ecc71;
+  border-top-right-radius:15px;
+  border-bottom-right-radius:15px;
 }
 
 
@@ -28,8 +37,13 @@ progress::-moz-progress-bar {
   background: #0d0d0d;
 }
 
-
-
+.drop-zone{
+  background: #ffffff;
+  border: 1px solid;
+  padding: 10px;
+  height: 80px;
+  width: 300px;
+}
 
 
 .box1{
@@ -46,7 +60,7 @@ progress::-moz-progress-bar {
   display: inline-block;
   padding: 0.3em 1em;
   text-decoration: none;
-  border: solid 2px #fd9535;
+  border: solid 2px #2ecc71;
   border-radius: 3px;
   transition: .4s;
 }
@@ -61,7 +75,7 @@ progress::-moz-progress-bar {
   display: inline-block;
   padding: 0.3em 1em;
   text-decoration: none;
-  border: solid 2px #fd9535;
+  border: solid 2px #2ecc71;
   border-radius: 3px;
   transition: .4s;
 }
@@ -75,10 +89,10 @@ progress::-moz-progress-bar {
   display: inline-block;
   padding: 0.3em 1em;
   text-decoration: none;
-  border: solid 2px #fd9535;
+  border: solid 2px #2ecc71;
   border-radius: 3px;
   transition: .4s;
-  color:#d9376e;
+  color:#000000;
 }
 
 
@@ -105,7 +119,7 @@ progress::-moz-progress-bar {
   margin-bottom:0.5ex;
   text-decoration: none;
   border: solid 2px #000000;
-  border-radius: 3px;
+  border-radius: 15px;
   transition: .4s;
 }
 
@@ -116,6 +130,7 @@ progress::-moz-progress-bar {
   background: #2cb67d;
   color: white;
 }
+
 
 
 .report_button {
@@ -130,8 +145,8 @@ progress::-moz-progress-bar {
     padding: 0.25em 0.5em;
     text-decoration: none;
     color: #0d0d0d;
-    background: #fd9535;/*背景色*/
-    border-bottom: solid 2px #d27d00;/*少し濃い目の色に*/
+    background: #2ecc71;/*背景色*/
+    border-bottom: solid 2px #27ae60;/*少し濃い目の色に*/
     border-radius: 4px;/*角の丸み*/
     box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
     font-weight: bold;
@@ -139,7 +154,7 @@ progress::-moz-progress-bar {
 .report_button:active {
   vertical-align: middle;
   -webkit-appearance: none;
-  border-bottom: solid 2px #fd9535;
+  border-bottom: solid 2px #27ae60;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
   }
 
@@ -156,14 +171,14 @@ progress::-moz-progress-bar {
       padding: 0.25em 0.5em;
       text-decoration: none;
       color: #0d0d0d;
-      background: #2cb67d;/*背景色*/
-      border-bottom: solid 2px #0d8050;/*少し濃い目の色に*/
-      border-radius: 4px;/*角の丸み*/
+      background: #2ecc71;/*背景色*/
+      border-bottom: solid 2px #27ae60;/*少し濃い目の色に*/
+      border-radius: 25px;/*角の丸み*/
       box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
       font-weight: bold;
   }
   .sub_button:active {
     -webkit-appearance: none;
-    border-bottom: solid 2px #fd9535;
+    border-bottom: solid 2px #2ecc71;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
     }
