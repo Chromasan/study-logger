@@ -1,9 +1,10 @@
+//すべての問題を記録している箇所がないから!
+//更にいうと、順番の解いているとも限らないから、理想なのは、最後に解いた問題をテキストに記録してしまうこと！あとはそれを読み込めば良いのだ！
+
 
 //ドラッグアンドドロップを実装する関数
 //htmlの方に記述する事にした
 //参照先：http://bashalog.c-brains.jp/20/03/30-170110.php
-
-
 //進捗をグラフに反映する関数、数値処理ごとに実行する
 function progress_bar(){
     // プログレスバーの進捗値を更新し、プログレスバーに反映させる
@@ -26,16 +27,18 @@ function count(){
 
   //何も記入されていない場合も、空白をカウントしている模様
   if (today_done==""){
-    var count="";
+    var count=0;
   }else{
   //ここから、,を抜いてカウントする
   var today_split=today_done.split(',')
   //数を数える
   var count=today_split.length
   }
-
+  //反映
   document.getElementById("count").value=count
 }
+
+
 
 //今日の達成数のリセット
 function today_count_reset(){
@@ -77,8 +80,9 @@ function output(){
 }
 
 //現状の保存関数：文章を作成し、フォームに出力→保存する関数に引き継ぐ
+//一番最後の行に、pre_numberを追加した！
 function save_now(){
-  var new_save=document.getElementById("output1").value+"\n"+document.getElementById("output2").value+"\n"+document.getElementById("output3").value+"\n"+document.getElementById("output4").value+"\n"+document.getElementById("output5").value+"\n"+document.getElementById("output6").value+"\n"+document.getElementById("output7").value
+  var new_save=document.getElementById("output1").value+"\n"+document.getElementById("output2").value+"\n"+document.getElementById("output3").value+"\n"+document.getElementById("output4").value+"\n"+document.getElementById("output5").value+"\n"+document.getElementById("output6").value+"\n"+document.getElementById("output7").value+"\n"+document.getElementById("pre_number").value;
   document.form1.text1.value=new_save;
   output();
 }
@@ -120,6 +124,7 @@ function splitByLine() {
     document.getElementById("output5").value=lines[4];
     document.getElementById("output6").value=lines[5];
     document.getElementById("output7").value=lines[6];
+    document.getElementById("pre_number").value=lines[7];
 
     count()
     progress_bar()
@@ -141,15 +146,23 @@ function new_number_set3(){
 }
 
 
-
-
-
 //現在の問題についてのレスポンスに対応する関数
 function maru(){
- //問題番号候補の更新
-  spare_change()
-
+  //現在の番号を取得
   var now=document.getElementById("output2").value;
+
+  //空白の入力が起きた場合、リアクションが起きないようにする
+  if(now==""){
+    alert('空欄です！');
+
+  }else{
+    //問題番号候補の更新
+     spare_change()
+  //取得したら、空欄にする
+  document.getElementById("output2").value="";
+  //さっき解いた問題番号の箇所に反映させる
+  document.getElementById("pre_number").value=now;
+
   //今日解いた問題、○を更新
   var today=document.getElementById("output3").value;
   if (today==""){
@@ -170,13 +183,20 @@ function maru(){
   count()
   progress_bar()
 }
+}
 
 function sankaku(){
-  //問題番号候補の更新
-   spare_change()
-
-
    var now=document.getElementById("output2").value;
+   //空白の入力が起きた場合、リアクションが起きないようにする
+   if(now==""){
+     alert('空欄です！');
+   }else{
+     //問題番号候補の更新
+      spare_change()
+   //取得したら、空欄にする
+   document.getElementById("output2").value="";
+   //さっき解いた問題番号の箇所に反映させる
+   document.getElementById("pre_number").value=now;
    //今日解いた問題、○を更新
    var today=document.getElementById("output3").value;
    if (today==""){
@@ -196,13 +216,21 @@ function sankaku(){
 
    count()
    progress_bar()
+ }
 }
 
 function batu(){
-  //問題番号候補の更新
-   spare_change()
-
    var now=document.getElementById("output2").value;
+   //空白の入力が起きた場合、リアクションが起きないようにする
+   if(now==""){
+     alert('空欄です！');
+   }else{
+     //問題番号候補の更新
+      spare_change()
+   //取得したら、空欄にする
+   document.getElementById("output2").value="";
+   //さっき解いた問題番号の箇所に反映させる
+   document.getElementById("pre_number").value=now;
    //今日解いた問題、○を更新
    var today=document.getElementById("output3").value;
    if (today==""){
@@ -222,13 +250,21 @@ function batu(){
 
    count()
    progress_bar()
+ }
 }
 
 function hatena(){
-  //問題番号候補の更新
-   spare_change()
-
    var now=document.getElementById("output2").value;
+   //空白の入力が起きた場合、リアクションが起きないようにする
+   if(now==""){
+     alert('空欄です！');
+   }else{
+     //問題番号候補の更新
+      spare_change()
+   //取得したら、空欄にする
+   document.getElementById("output2").value="";
+   //さっき解いた問題番号の箇所に反映させる
+   document.getElementById("pre_number").value=now;
    //今日解いた問題は更新しない！、？のみを更新
 
    var hatena=document.getElementById("output7").value;
@@ -241,4 +277,5 @@ function hatena(){
 
    count()
    progress_bar()
+ }
 }
