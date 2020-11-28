@@ -27,37 +27,42 @@
 </div>
 
 <div>
-  <input class="display_box_v1" type="tel" maxlength="4" name="text11" size="10" id="output2" value=""><br>
-    <input class="spare_button" type="button" value="次候補" onclick="new_number_set1()" id="spare1">
-    <input class="spare_button" type="button" value="次候補" onclick="new_number_set2()" id="spare2">
-    <input class="spare_button" type="button" value="次候補" onclick="new_number_set3()" id="spare3">
-
-</div>
-
-<div　class="button_wrapper">
-    <input class="report_button" type="button" value="&#9711;" onclick="maru()" >
-    <input class="report_button" type="button" value="&#x25B3;"  onclick="sankaku()">
-    <input class="report_button" type="button" value="&#x00D7;"  onclick="batu()">
-    <input class="report_button" type="button" value="&quest;"  onclick="hatena()">
+  <input class="pre_number_display_box" type="tel" maxlength="4"  size="4" id="pre_number" value="done">
+  <input class="display_box_v1" type="tel" maxlength="4" name="text11" size="4" id="output2" value="now"><br>
+    <input class="button16" type="button" value="候補" onclick="new_number_set1()" id="spare1">
+    <input class="button16" type="button" value="候補" onclick="new_number_set2()" id="spare2">
+    <input class="button16" type="button" value="候補" onclick="new_number_set3()" id="spare3">
 </div>
 
 <div>
-  <input class="display_box" type="tel" maxlength="4" name="text100" size="12" value="今日の目標数は？"  id="target_amount">
+  <br>
+</div>
+
+<div　class="button_wrapper">
+    <input class="button1" type="button" value="&#9711;" onclick="maru()" >
+    <input class="button1" type="button" value="&#x25B3;"  onclick="sankaku()">
+    <input class="button1" type="button" value="&#x00D7;"  onclick="batu()">
+    <input class="button1" type="button" value="&quest;"  onclick="hatena()">
+</div>
+
+<div>
+  <br>
+  <input class="display_box" type="tel" maxlength="4" name="text100" size="12" value="目標数は？"  id="target_amount">
 </div>
 
 
 
 <div>
 <input type="text" class="display_box_v2" name="text30" size="12" maxlength="4" value="今日の達成数" id="count"><br>
-<input class="sub_button" type="button" value="今日の達成数をリセット" onclick="today_count_reset()">
+<input class="button3" type="button" value="今日の達成数リセット" onclick="today_count_reset()">
 </div>
-        <form action="./upload.php" method="post" enctype="multipart/form-data">
+        <br><form action="./upload.php" method="post" enctype="multipart/form-data">
               <div class="drop-zone" id="drop-zone">
                   <p>セーブデータをドラッグ＆ドロップ OR</p>
                   <input type="file" name="file" id="file-input">
               </div>
 
-      <input class="sub_button" type="button" value="現在の進捗をセーブする" onclick="save_now()">
+      <input class="button3" type="button" value="現在の進捗をセーブする" onclick="save_now()">
 
       <details>
           <summary>記録情報の詳細表示/非表示</summary>
